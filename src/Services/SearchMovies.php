@@ -2,6 +2,7 @@
 
 namespace Idnan\Tevo\Services;
 
+use Colors\Color;
 use Idnan\Tevo\Services\Base\BaseService;
 use Idnan\Tevo\Core\Constants\Constant as C;
 use Console_Table as ConsoleTable;
@@ -51,27 +52,13 @@ class SearchMovies extends BaseService
             return true;
         }
 
-        // set header
-        $tbl = new ConsoleTable();
-        $tbl->setHeaders([
-            'Sr#',
-            'Title',
-            'Release Date',
-            'Popularity',
-        ]);
+        $c = new Color();
 
-        // set rows
-        foreach ($movies as $index => $movie) {
-
-            $tbl->addRow([
-                (($index + 1) + (($this->page - 1) * static::PAGE_SIZE)),
-                $movie['original_title'],
-                $movie['release_date'],
-                round($movie['popularity'], 1),
-            ]);
-        }
-
-        echo $tbl->getTable();
+        echo $c("Title: \t\t\t" . $movies[0]['original_title'])->red()->bold() . PHP_EOL;
+        echo $c("Release Date: \t\t" . $movies[0]['release_date'])->red()->bold() . PHP_EOL;
+        echo $c("Popularity: \t\t" . round($movies[0]['popularity'], 1))->red()->bold() . PHP_EOL;
+        echo $c("Plot: ")->red()->bold() . PHP_EOL;
+        echo $c($movies[0]['overview']) . PHP_EOL;
 
         return true;
     }
