@@ -20,7 +20,7 @@ class SearchMovies extends BaseService
      * @param string  $query
      * @param integer $page
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function get($query, $page)
@@ -39,7 +39,7 @@ class SearchMovies extends BaseService
      *
      * @return bool
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function display($response)

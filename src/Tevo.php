@@ -24,7 +24,7 @@ class Tevo
     /**
      * Get top rated movies
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getTopRated()
@@ -35,7 +35,7 @@ class Tevo
     /**
      * Get upcoming movies
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getUpcoming()
@@ -46,7 +46,7 @@ class Tevo
     /**
      * Get popular movies
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getPopular()
@@ -57,7 +57,7 @@ class Tevo
     /**
      * Get now playing movies
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getNowPlaying()
@@ -70,7 +70,7 @@ class Tevo
      *
      * @param string $query
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function search($query)

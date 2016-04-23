@@ -16,7 +16,7 @@ class UpcomingMovies extends BaseService
      *
      * @param integer $page
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function get($page)

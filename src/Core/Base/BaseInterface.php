@@ -9,7 +9,7 @@ interface BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getTopRated();
@@ -19,7 +19,7 @@ interface BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getUpcoming();
@@ -29,7 +29,7 @@ interface BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getPopular();
@@ -39,7 +39,7 @@ interface BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getNowPlaying();
@@ -51,7 +51,7 @@ interface BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function search($query);

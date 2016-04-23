@@ -16,7 +16,7 @@ class Series implements BaseInterface
      *
      * @return array
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getUpcoming()
@@ -29,7 +29,7 @@ class Series implements BaseInterface
      *
      * @return array
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getTrending()

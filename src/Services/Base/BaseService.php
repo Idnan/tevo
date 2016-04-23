@@ -39,7 +39,7 @@ class BaseService
      *
      * @return array
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function callApi($url, $parameters = [])
@@ -60,7 +60,7 @@ class BaseService
      *
      * @return array
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     private function transform($response)
@@ -73,7 +73,7 @@ class BaseService
      *
      * @return string
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     private function getApiKey()
@@ -88,7 +88,7 @@ class BaseService
      *
      * @return bool
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function display($response)

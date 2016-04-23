@@ -31,7 +31,7 @@ class Movies implements BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getUpcoming()
@@ -44,7 +44,7 @@ class Movies implements BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getTopRated()
@@ -57,7 +57,7 @@ class Movies implements BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getPopular()
@@ -70,7 +70,7 @@ class Movies implements BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function getNowPlaying()
@@ -85,7 +85,7 @@ class Movies implements BaseInterface
      *
      * @return void
      *
-     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     * @author Adnan Ahmed <mahradnan@hotmail.com>
      *
      */
     public function search($query)
