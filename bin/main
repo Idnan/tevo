@@ -2,3 +2,11 @@
 <?php
 
 require_once "../vendor/autoload.php";
+
+use Idnan\Tevo\Movies;
+use Idnan\Tevo\Tevo;
+
+$movies = new Movies();
+$tevo = new Tevo($movies);
+
+$tevo->getUpcoming();
