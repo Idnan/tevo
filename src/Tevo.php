@@ -22,14 +22,14 @@ class Tevo
     }
 
     /**
-     * Get trending movies/series
+     * Get top rated movies/series
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *
      */
-    public function getTrending()
+    public function getTopRated()
     {
-        $this->tevo->getTrending();
+        $this->tevo->getTopRated();
     }
 
     /**
@@ -41,5 +41,27 @@ class Tevo
     public function getUpcoming()
     {
         $this->tevo->getUpcoming();
+    }
+
+    /**
+     * Get popular movies/series
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function getPopular()
+    {
+        $this->tevo->getPopular();
+    }
+
+    /**
+     * Get now playing movies/series
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function getNowPlaying()
+    {
+        $this->tevo->getNowPlaying();
     }
 }

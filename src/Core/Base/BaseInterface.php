@@ -5,23 +5,33 @@ namespace Idnan\Tevo\Core\Base;
 interface BaseInterface
 {
     /**
-     * Return trending movies/series
+     * Return top rated movies/series
      *
-     * @return mixed
+     * @return void
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *
      */
-    public function getTrending();
+    public function getTopRated();
 
     /**
      * Get upcoming movies/series
      *
-     * @return mixed
+     * @return void
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *
      */
     public function getUpcoming();
+
+    /**
+     * Get popular movies/series
+     *
+     * @return void
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function getPopular();
 
 }

@@ -9,11 +9,16 @@ use Idnan\Tevo\Tevo;
 // get options
 $options = getopt('', [
     'upcoming',
-    'trending',
+    'now_playing',
+    'popular',
+    'top_rated',
     'page::',
 ]);
 
-if (!isset($options['upcoming']) && !isset($options['trending'])) {
+if (!isset($options['upcoming']) &&
+    !isset($options['now_playing']) &&
+    !isset($options['popular']) &&
+    !isset($options['top_rated'])) {
     echo '[FAIL] Invalid command' . PHP_EOL;
     exit(1);
 }
@@ -23,4 +28,10 @@ $page = !empty($options['page']) ? (intval($options['page']) == 0 ? 1 : intval($
 $movies = new Movies($page);
 $tevo = new Tevo($movies);
 
-$tevo->getUpcoming();
+if (isset($options['upcoming'])) {
+    $tevo->getUpcoming();
+} else if (isset($options['top_rated'])) {
+    $tevo->getTopRated();
+} else if (isset($options['popular'])) {
+    $tevo->getPopular();
+}
