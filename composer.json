@@ -1,6 +1,6 @@
 {
   "name": "idnan/tevo",
-  "description": "A command line utility to get trending movies/tv series and lot more...",
+  "description": "A command line utility to get top rated, popular, upcoming movies and lot more...",
   "require": {
     "guzzlehttp/guzzle": "~6.0",
     "pear/console_table": "^1.3",
