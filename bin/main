@@ -12,14 +12,22 @@ $options = getopt('', [
     'now_playing',
     'popular',
     'top_rated',
+    'search',
     'page::',
+    'query::',
 ]);
 
 if (!isset($options['upcoming']) &&
     !isset($options['now_playing']) &&
     !isset($options['popular']) &&
-    !isset($options['top_rated'])) {
+    !isset($options['top_rated']) &&
+    !isset($options['search'])) {
     echo '[FAIL] Invalid command' . PHP_EOL;
+    exit(1);
+}
+
+if (isset($options['search']) && empty(trim($options['query']))) {
+    echo '[FAIL] Query is required' . PHP_EOL;
     exit(1);
 }
 
@@ -35,5 +43,8 @@ if (isset($options['upcoming'])) {
 } else if (isset($options['popular'])) {
     $tevo->getPopular();
 } else if (isset($options['now_playing'])) {
-     $tevo->getNowPlaying();
+    $tevo->getNowPlaying();
+} else if (isset($options['search'])) {
+    $query = urlencode($options['query']);
+    $tevo->search($query);
 }

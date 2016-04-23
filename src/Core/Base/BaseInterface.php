@@ -5,7 +5,7 @@ namespace Idnan\Tevo\Core\Base;
 interface BaseInterface
 {
     /**
-     * Return top rated movies/series
+     * Return top rated movies
      *
      * @return void
      *
@@ -15,7 +15,7 @@ interface BaseInterface
     public function getTopRated();
 
     /**
-     * Get upcoming movies/series
+     * Get upcoming movies
      *
      * @return void
      *
@@ -25,7 +25,7 @@ interface BaseInterface
     public function getUpcoming();
 
     /**
-     * Get popular movies/series
+     * Get popular movies
      *
      * @return void
      *
@@ -35,7 +35,7 @@ interface BaseInterface
     public function getPopular();
 
     /**
-     * Get now playing movies/series
+     * Get now playing movies
      *
      * @return void
      *
@@ -44,4 +44,15 @@ interface BaseInterface
      */
     public function getNowPlaying();
 
+    /**
+     * Search movies by name
+     *
+     * @param string $query
+     *
+     * @return void
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function search($query);
 }

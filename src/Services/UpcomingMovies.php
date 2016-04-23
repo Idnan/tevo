@@ -4,8 +4,6 @@ namespace Idnan\Tevo\Services;
 
 use Idnan\Tevo\Core\Constants\Constant as C;
 use Idnan\Tevo\Services\Base\BaseService;
-use Console_Table as ConsoleTable;
-
 
 /**
  * Class UpcomingMovies

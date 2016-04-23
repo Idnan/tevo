@@ -10,4 +10,5 @@ class Constant
     const TOP_RATED_MOVIES   = 'http://api.themoviedb.org/3/movie/top_rated';
     const POPULAR_MOVIES     = 'http://api.themoviedb.org/3/movie/popular';
     const NOW_PLAYING_MOVIES = 'http://api.themoviedb.org/3/movie/now_playing';
+    const SEARCH_MOVIES      = 'http://api.themoviedb.org/3/search/movie';
 }

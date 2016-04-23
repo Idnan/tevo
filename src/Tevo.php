@@ -64,4 +64,17 @@ class Tevo
     {
         $this->tevo->getNowPlaying();
     }
+
+    /**
+     * Search movies
+     *
+     * @param string $query
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function search($query)
+    {
+        $this->tevo->search($query);
+    }
 }

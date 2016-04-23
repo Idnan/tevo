@@ -2,10 +2,11 @@
 
 namespace Idnan\Tevo;
 
+use Idnan\Tevo\Services\SearchMovies;
+use Idnan\Tevo\Services\PopularMovies;
 use Idnan\Tevo\Core\Base\BaseInterface;
 use Idnan\Tevo\Services\TopRatedMovies;
 use Idnan\Tevo\Services\UpcomingMovies;
-use Idnan\Tevo\Services\PopularMovies;
 use Idnan\Tevo\Services\NowPlayingMovies;
 
 /**
@@ -75,5 +76,20 @@ class Movies implements BaseInterface
     public function getNowPlaying()
     {
         (new NowPlayingMovies())->get($this->page);
+    }
+
+    /**
+     * Search movies by name
+     *
+     * @param string $query
+     *
+     * @return void
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function search($query)
+    {
+        (new SearchMovies())->get($query, $this->page);
     }
 }
