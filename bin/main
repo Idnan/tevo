@@ -34,4 +34,6 @@ if (isset($options['upcoming'])) {
     $tevo->getTopRated();
 } else if (isset($options['popular'])) {
     $tevo->getPopular();
+} else if (isset($options['now_playing'])) {
+     $tevo->getNowPlaying();
 }

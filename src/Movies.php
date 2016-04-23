@@ -6,6 +6,7 @@ use Idnan\Tevo\Core\Base\BaseInterface;
 use Idnan\Tevo\Services\TopRatedMovies;
 use Idnan\Tevo\Services\UpcomingMovies;
 use Idnan\Tevo\Services\PopularMovies;
+use Idnan\Tevo\Services\NowPlayingMovies;
 
 /**
  * Class Movies
@@ -61,5 +62,18 @@ class Movies implements BaseInterface
     public function getPopular()
     {
         (new PopularMovies())->get($this->page);
+    }
+
+    /**
+     * Get now playing movies
+     *
+     * @return void
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function getNowPlaying()
+    {
+        (new NowPlayingMovies())->get($this->page);
     }
 }

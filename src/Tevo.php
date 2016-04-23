@@ -22,7 +22,7 @@ class Tevo
     }
 
     /**
-     * Get top rated movies/series
+     * Get top rated movies
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *
@@ -33,7 +33,7 @@ class Tevo
     }
 
     /**
-     * Get upcoming movies/series
+     * Get upcoming movies
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *
@@ -44,7 +44,7 @@ class Tevo
     }
 
     /**
-     * Get popular movies/series
+     * Get popular movies
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *
@@ -55,7 +55,7 @@ class Tevo
     }
 
     /**
-     * Get now playing movies/series
+     * Get now playing movies
      *
      * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
      *

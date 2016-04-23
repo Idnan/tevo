@@ -34,4 +34,14 @@ interface BaseInterface
      */
     public function getPopular();
 
+    /**
+     * Get now playing movies/series
+     *
+     * @return void
+     *
+     * @author Adnan Ahmed <adnan.ahmed@tajawal.com>
+     *
+     */
+    public function getNowPlaying();
+
 }
