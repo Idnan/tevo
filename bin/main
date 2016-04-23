@@ -6,7 +6,21 @@ require_once "../vendor/autoload.php";
 use Idnan\Tevo\Movies;
 use Idnan\Tevo\Tevo;
 
-$movies = new Movies();
+// get options
+$options = getopt('', [
+    'upcoming',
+    'trending',
+    'page::',
+]);
+
+if (!isset($options['upcoming']) && !isset($options['trending'])) {
+    echo '[FAIL] Invalid command' . PHP_EOL;
+    exit(1);
+}
+
+$page = !empty($options['page']) ? (intval($options['page']) == 0 ? 1 : intval($options['page'])) : 1;
+
+$movies = new Movies($page);
 $tevo = new Tevo($movies);
 
 $tevo->getUpcoming();
