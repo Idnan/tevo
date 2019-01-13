@@ -1,6 +1,6 @@
 {
   "name": "idnan/jenkins-deploy",
-  "description": "A jenkins cli tool to run jobs from command line",
+  "description": "A jenkins tool to run jobs from command line",
   "type": "project",
   "authors": [
     {
