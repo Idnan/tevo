@@ -1,0 +1,20 @@
+{
+  "name": "idnan/jenkins-deploy",
+  "description": "A jenkins cli tool to run jobs from command line",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Adnan Ahmed",
+      "email": "idnan.se@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Idnan\\Jenkins\\": "./src/"
+    }
+  },
+  "license": ""
+}
