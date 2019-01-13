@@ -17,7 +17,7 @@ class DeployCommand extends Command
      */
     public function configure()
     {
-        $this->setName('run')
+        $this->setName('deploy')
              ->setDescription('Run the specified job in jenkins')
              ->addArgument('job', InputArgument::REQUIRED, 'Job name');
     }
