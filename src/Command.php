@@ -39,4 +39,17 @@ abstract class Command extends SymfonyCommand
      * @return void
      */
     public abstract function process();
+
+    /**
+     * Exit the application
+     *
+     * @param string $message
+     */
+    public function abort(string $message = ''): void
+    {
+        if (!empty($message)) {
+            $this->output->writeln($message);
+        }
+        exit(0);
+    }
 }
