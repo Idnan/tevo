@@ -12,6 +12,9 @@
     "symfony/console": "^4.2"
   },
   "autoload": {
+    "files": [
+      "src/Support/helpers.php"
+    ],
     "psr-4": {
       "Idnan\\Jenkins\\": "./src/"
     }

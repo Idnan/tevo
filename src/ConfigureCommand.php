@@ -3,6 +3,7 @@
 namespace Idnan\Jenkins;
 
 use Symfony\Component\Console\Question\Question;
+use function App\Support\basePath;
 
 /**
  * Class ConfigureCommand
@@ -11,6 +12,12 @@ use Symfony\Component\Console\Question\Question;
  */
 class ConfigureCommand extends Command
 {
+    const JENKINS_CLI_NAME      = 'jenkins-cli.jar';
+    const JENKINS_DOWNLOAD_PATH = '/jnlpJars/jenkins-cli.jar';
+
+    /**
+     * Configures the current command.
+     */
     public function configure()
     {
         $this->setName("configure")
@@ -66,7 +73,16 @@ class ConfigureCommand extends Command
      */
     private function saveConfig(string $jenkinsUrl, string $jenkinsToken): bool
     {
-        return false;
+        $fileName = '.jenkins';
+        $savePath = basePath() . $fileName;
+
+        $data = [
+            'url'   => $jenkinsUrl,
+            'token' => $jenkinsToken,
+            'cli'   => realpath(basePath() . static::JENKINS_CLI_NAME),
+        ];
+
+        return (bool)file_put_contents($savePath, serialize($data));
     }
 
     /**
@@ -78,14 +94,9 @@ class ConfigureCommand extends Command
      */
     private function downloadJenkinsCli(string $jenkinsUrl): bool
     {
-        $name    = 'jenkins-cli.jar';
-        $baseDir = __DIR__ . '/../';
+        $savePath    = basePath() . static::JENKINS_CLI_NAME;
+        $downloadUrl = rtrim($jenkinsUrl, '\\') . static::JENKINS_DOWNLOAD_PATH;
 
-        $savePath = $baseDir . $name;
-
-        $postfix    = '/jnlpJars/jenkins-cli.jar';
-        $jenkinsUrl = rtrim($jenkinsUrl, '\\') . $postfix;
-
-        return (bool)file_put_contents($savePath, fopen($jenkinsUrl, 'r'));
+        return (bool)file_put_contents($savePath, fopen($downloadUrl, 'r'));
     }
 }
