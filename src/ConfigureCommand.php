@@ -37,11 +37,14 @@ class ConfigureCommand extends Command
         // ask for jenkins token
         if (!$jenkinsToken = $this->askQuestion("Token: ")) $this->abort();
 
+        // ask for jenkins username
+        if (!$jenkinsUsername = $this->askQuestion("Username: ")) $this->abort();
+
         $this->output->writeln('[+] Downloading jenkins cli');
         if (!$this->downloadJenkinsCli($jenkinsUrl)) $this->abort("[-] An error occurred while downloading jenkins cli");
 
         $this->output->writeln('[+] Saving jenkins config');
-        if (!$this->saveConfig($jenkinsUrl, $jenkinsToken)) $this->abort("[-] Unable to save jenkins config");
+        if (!$this->saveConfig($jenkinsUrl, $jenkinsToken, $jenkinsUsername)) $this->abort("[-] Unable to save jenkins config");
 
         $this->output->writeln('[+] Configured successfully');
     }
@@ -68,18 +71,20 @@ class ConfigureCommand extends Command
     /**
      * @param string $jenkinsUrl
      * @param string $jenkinsToken
+     * @param string $jenkinsUsername
      *
      * @return bool
      */
-    private function saveConfig(string $jenkinsUrl, string $jenkinsToken): bool
+    private function saveConfig(string $jenkinsUrl, string $jenkinsToken, string $jenkinsUsername): bool
     {
         $fileName = '.jenkins';
         $savePath = basePath() . $fileName;
 
         $data = [
-            'url'   => $jenkinsUrl,
-            'token' => $jenkinsToken,
-            'cli'   => realpath(basePath() . static::JENKINS_CLI_NAME),
+            'url'      => $jenkinsUrl,
+            'token'    => $jenkinsToken,
+            'username' => $jenkinsUsername,
+            'cli'      => realpath(basePath() . static::JENKINS_CLI_NAME),
         ];
 
         return (bool)file_put_contents($savePath, serialize($data));
