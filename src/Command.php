@@ -5,6 +5,7 @@ namespace Idnan\Jenkins;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use function App\Support\basePath;
 
 /**
  * Class Command
@@ -13,6 +14,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 abstract class Command extends SymfonyCommand
 {
+    const JENKINS_CLI_NAME      = 'jenkins-cli.jar';
+    const JENKINS_DOWNLOAD_PATH = '/jnlpJars/jenkins-cli.jar';
+
     /** @var InputInterface $input */
     protected $input;
 
@@ -45,11 +49,53 @@ abstract class Command extends SymfonyCommand
      *
      * @param string $message
      */
-    public function abort(string $message = ''): void
+    protected function abort(string $message = ''): void
     {
         if (!empty($message)) {
             $this->output->writeln($message);
         }
         exit(0);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getJenkinsCliPath(): string
+    {
+        return $this->getJenkinsConfig()['cli'] ?? '';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getJenkinsUrl(): string
+    {
+        return $this->getJenkinsConfig()['url'] ?? '';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getJenkinsToken(): string
+    {
+        return $this->getJenkinsConfig()['token'] ?? '';
+    }
+
+    /**
+     * @return string
+     */
+    protected function getJenkinsUsername(): string
+    {
+        return $this->getJenkinsConfig()['username'] ?? '';
+    }
+
+    /**
+     * @return array
+     */
+    protected function getJenkinsConfig(): array
+    {
+        $path = basePath() . '.jenkins';
+
+        return unserialize(file_get_contents($path));
     }
 }

@@ -12,9 +12,6 @@ use function App\Support\basePath;
  */
 class ConfigureCommand extends Command
 {
-    const JENKINS_CLI_NAME      = 'jenkins-cli.jar';
-    const JENKINS_DOWNLOAD_PATH = '/jnlpJars/jenkins-cli.jar';
-
     /**
      * Configures the current command.
      */

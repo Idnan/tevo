@@ -19,5 +19,8 @@
       "Idnan\\Jenkins\\": "./src/"
     }
   },
+  "bin": [
+    "bin/jenkins"
+  ],
   "license": ""
 }

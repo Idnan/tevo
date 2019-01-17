@@ -1,3 +1,5 @@
 /vendor/
 .idea/
 .DS_Store
+jenkins-cli.jar
+.jenkins
