@@ -21,5 +21,4 @@ use `-v` for detailed output.
 
 ## todos
 [x] Configure command to automate the cli download and configure the configuration
-
-[] Write tests
+[ ] Write tests
