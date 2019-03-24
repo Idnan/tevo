@@ -17,6 +17,13 @@ Run following command to deploy the any job
 ```
 jenkins deploy job_name 
 ```
+
+## List Jobs
+Run following command to list all the jobs
+```
+jenkins deploy list-jobs 
+```
+
 use `-v` for detailed output.
 
 ## todos
