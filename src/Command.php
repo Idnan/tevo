@@ -45,7 +45,10 @@ abstract class Command extends SymfonyCommand
      *
      * @return void
      */
-    public abstract function process();
+    public function process()
+    {
+        $this->exec();
+    }
 
     /**
      * Exit the application

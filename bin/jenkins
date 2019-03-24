@@ -8,4 +8,5 @@ use Symfony\Component\Console\Application;
 $app = new Application();
 $app->add(new \Idnan\Jenkins\ConfigureCommand());
 $app->add(new \Idnan\Jenkins\BuildCommand());
+$app->add(new \Idnan\Jenkins\JobListCommand());
 $app->run();
