@@ -7,5 +7,5 @@ use Symfony\Component\Console\Application;
 
 $app = new Application();
 $app->add(new \Idnan\Jenkins\ConfigureCommand());
-$app->add(new \Idnan\Jenkins\DeployCommand());
+$app->add(new \Idnan\Jenkins\BuildCommand());
 $app->run();

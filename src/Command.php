@@ -23,6 +23,9 @@ abstract class Command extends SymfonyCommand
     /** @var OutputInterface $output */
     protected $output;
 
+    /** @var string */
+    protected $command;
+
     /**
      * @param \Symfony\Component\Console\Input\InputInterface   $input
      * @param \Symfony\Component\Console\Output\OutputInterface $output
@@ -97,5 +100,27 @@ abstract class Command extends SymfonyCommand
         $path = basePath() . '.jenkins';
 
         return unserialize(file_get_contents($path));
+    }
+
+    /**
+     * @return bool
+     */
+    public function exec()
+    {
+        $cli       = $this->getJenkinsCliPath();
+        $url       = $this->getJenkinsUrl();
+        $username  = $this->getJenkinsUsername();
+        $token     = $this->getJenkinsToken();
+        $isVerbose = $this->output->isVerbose();
+
+        $command = "java -jar {$cli} -s '{$url}' -auth {$username}:{$token} {$this->command}";
+
+        if ($isVerbose) {
+            $command .= " -v";
+        }
+
+        system($command, $result);
+
+        return $result == 0;
     }
 }
